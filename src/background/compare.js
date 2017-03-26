@@ -4,7 +4,7 @@
     "use strict";
     
 
-    myModel.findSimilarities = function(){
+    myModel.findSimilarities = function(history){
         
     };
     
