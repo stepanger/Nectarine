@@ -4,10 +4,19 @@
     "use strict";
     
 
-    myModel.findSimilarities = function(history){
+    myModel.findSimilaritiesURL = function(URL, regx){
         
+        regx = new RegExp(regx, "i");
+        
+        if(regx.test(URL)){
+            return [true, URL]
+        }else{ 
+            return [false, URL]
+        }
     };
     
     return myModel;
     
-}(MANDARIN || {}));
+}(NECTARINE || {}));
+
+//NECTARINE.findSimilaritiesURL("https://www.google.ru/", "google|habrahabr|kinogo")
