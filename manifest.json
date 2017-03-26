@@ -8,7 +8,7 @@
   },
   "background": {
     "scripts": [
-        "src/background/app.js"
+        "src/background/history.js"
     ],
     "persistent": true
   },
@@ -20,13 +20,13 @@
     {
       "js":[
           "build/jquery-1.11.3.min.js",
-          "src/content_scripts/history.js"
+          "src/content_scripts/app.js"
       ],
       "css":[
         "css/mystyles.css"
       ],
       "matches":[
-        "http://*/*"
+        "<all_urls>"
       ],
       "run_at": "document_start"
     }
