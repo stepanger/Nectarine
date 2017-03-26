@@ -6,7 +6,8 @@
 
     myModel.findSimilaritiesURL = function(URL, regx){
         
-        regx = new RegExp(regx, "i");
+        //regx = regx.join('|');
+        regx = new RegExp(regx.join('|'), "i");
         
         if(regx.test(URL)){
             return [true, URL]
@@ -19,4 +20,4 @@
     
 }(NECTARINE || {}));
 
-//NECTARINE.findSimilaritiesURL("https://www.google.ru/", "google|habrahabr|kinogo")
+//NECTARINE.findSimilaritiesURL("https://www.google.ru/", ["google", "habrahabr", "kinogo"])
