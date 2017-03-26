@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2, 
+  "name": "Nectarine", 
+  "version": "0.1",
+  "description": "Nectarine",
+  "browser_action": {
+    "default_title": "Nectarine"
+  },
+  "background": {
+    "scripts": [
+        "src/background/app.js"
+    ],
+    "persistent": true
+  },
+  "short_name": "Nectarine",
+  "permissions": [
+    "history"
+  ],
+   "content_scripts":[
+    {
+      "js":[
+          "build/jquery-1.11.3.min.js",
+          "src/content_scripts/history.js"
+      ],
+      "css":[
+        "css/mystyles.css"
+      ],
+      "matches":[
+        "http://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
