@@ -5,8 +5,7 @@
     
 
     myModel.findSimilaritiesURL = function(URL, regx){
-        
-        //regx = regx.join('|');
+    
         regx = new RegExp(regx.join('|'), "i");
         
         if(regx.test(URL)){
@@ -14,6 +13,10 @@
         }else{ 
             return [false, URL]
         }
+    };
+    
+    myModel.findSimilaritiesHTML = function(HTML, regx){
+        return true;
     };
     
     return myModel;
