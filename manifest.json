@@ -4,7 +4,8 @@
   "version": "0.1",
   "description": "Nectarine",
   "browser_action": {
-    "default_title": "Nectarine"
+    "default_title": "Nectarine",
+    "default_popup": "popup.html"
   },
   "background": {
     "scripts": [
