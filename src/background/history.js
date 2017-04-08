@@ -1,3 +1,54 @@
+;var HISTORY = (function (myModel) {
+    console.log("HISTORY ==> history.js");
+    
+    "use strict";
+    
+
+    /**
+    * visitPage
+    *
+    * HISTORY.visitPage(function(results){console.log(results)}) //http://url.com
+    *
+    * Наблюдать за историей браузера
+    * @param {callback}  function(results){}
+    * @return [callback]
+    */
+    myModel.visitPage = function(callback){
+        
+        chrome.history.onVisited.addListener(function(results){
+            callback(results.url);
+        })
+
+    };
+    
+    /**
+    * deleteUrl
+    *
+    * HISTORY.deleteUrl("http://url.com", function(){})
+    *
+    * Удаляет url из истории
+    * @param {urlPage}  String адрес страници
+    * @param {callback}  function(){}
+    * @return [callback]
+    */
+    myModel.deleteUrl = function(urlPage, callback){
+        chrome.history.deleteUrl({url: urlPage}, function(){
+            callback();
+        });
+    }
+    
+    return myModel;
+    
+}(HISTORY || {}));
+
+HISTORY.deleteUrl("http://url.com", function(){})
+
+
+
+
+
+
+/*
 var setting = [
     /google/i,
     /habrahabr/i,
@@ -21,3 +72,4 @@ chrome.history.onVisited.addListener(function(results){
         }
     }
 })
+*/

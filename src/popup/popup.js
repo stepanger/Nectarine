@@ -23,24 +23,23 @@
             }
             
             addParametrRegx(valueFilter);
+            $("ul").append("<li>"+DECODE.utf8ToB64(valueFilter)+"</li>");
+            $(".gala12").val("");
             
         });
         
     });
     
     function addParametrRegx(valueFilter){
+        
         CHROMESTO.getStorage("history", function(page){
-                
-            //console.log(page)
-            
+
             if(!page){
                 CHROMESTO.setStorage({"history": [valueFilter]}, function(){});
                 return
             }
             
             page[page.length] = valueFilter;
-            
-            //console.log(page)
             
             CHROMESTO.setStorage({"history": page}, function(){});
                 
