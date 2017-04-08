@@ -9,7 +9,9 @@
   },
   "background": {
     "scripts": [
-        "src/background/history.js"
+        "src/background/storage.js",
+        "src/background/history.js",
+        "src/background/ex.js"
     ],
     "persistent": true
   },

@@ -27,7 +27,7 @@
     * HISTORY.deleteUrl("http://url.com", function(){})
     *
     * Удаляет url из истории
-    * @param {urlPage}  String адрес страници
+    * @param {urlPage}  String адрес страницы
     * @param {callback}  function(){}
     * @return [callback]
     */

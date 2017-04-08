@@ -103,6 +103,21 @@
         })
     };
     
+    /**
+     * onChangeStorage
+     *
+     * CHROMESTO.onChangeStorage(function(){})
+     *
+     * Выполняется при изменении в chrome.storage.local
+     * @param {callback}  function(){}
+     * @return [callback]
+    */
+    myModel.onChangeStorage = function(callback){
+        chrome.storage.onChanged.addListener(function(){
+            callback();
+        })
+    }
+    
     return myModel
     
 }(CHROMESTO || {}));
