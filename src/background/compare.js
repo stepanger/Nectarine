@@ -19,9 +19,9 @@
         regx = new RegExp(regx.join('|'), "i");
         
         if(regx.test(URL)){
-            return [true, URL]
+            return true
         }else{ 
-            return [false, URL]
+            return false
         }
     };
     

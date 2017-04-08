@@ -11,6 +11,7 @@
     "scripts": [
         "src/background/storage.js",
         "src/background/history.js",
+        "src/background/compare.js",
         "src/background/ex.js"
     ],
     "persistent": true
