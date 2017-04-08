@@ -15,7 +15,8 @@
   },
   "short_name": "Nectarine",
   "permissions": [
-    "history"
+    "history",
+    "storage"
   ],
    "content_scripts":[
     {
