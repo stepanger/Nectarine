@@ -41,7 +41,6 @@
     
 }(HISTORY || {}));
 
-HISTORY.deleteUrl("http://url.com", function(){})
 
 
 
