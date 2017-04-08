@@ -3,9 +3,14 @@
     $(document).ready(function(){
         
         CHROMESTO.getStorage("history", function(page){
-            addHTMLStorage(page)
+            addHTMLStorage(page);
         });
         
+        
+        $("ul").on("click", "li", function(){
+            deletStorage($(this).text());
+            $(this).remove();
+        })
         
         $(".gala27").click(function() {
             
@@ -48,6 +53,26 @@
                 text: DECODE.utf8ToB64(this)
             }).appendTo($(".border"));
         });
-    }
+    };
+    
+    function deletStorage(his){
+        
+        his = DECODE.b64ToUtf8(his);
+        
+        console.log(his);
+        
+        CHROMESTO.getStorage("history", function(page){
+            
+            console.log(page);
+            
+            var positionNumber = page.indexOf(his);
+            
+            console.log(positionNumber);
+            page.splice(positionNumber, 1);
+            
+            CHROMESTO.setStorage({"history": page}, function(){});
+            
+        });
+    };
 
 }(jQuery))
