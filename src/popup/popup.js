@@ -12,21 +12,27 @@
                 return
             }
             
+            CHROMESTO.getStorage("history", function(page){
+                
+                //console.log(page)
+                
+                if(!page){
+                    CHROMESTO.setStorage({"history": [valueFilter]}, function(){});
+                    return
+                }
+                
+                page[page.length] = valueFilter;
+                
+                //console.log(page)
+                
+                CHROMESTO.setStorage({"history": page}, function(){});
+                
+            });
             
         });
         
     });
-    
-    /*
-     chrome.storage.local.set({"asd":[
-         "asd",
-         "sss"
-     ]}, function(err) {
-     });
-    
-    chrome.storage.local.get(function(page) {
-        console.log(page)
-    });
-    */
 
 }(jQuery))
+
+//page[page.length] = 'Компьютер'

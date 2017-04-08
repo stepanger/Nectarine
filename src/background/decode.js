@@ -1,12 +1,12 @@
-;var NECTARINE = (function (myModel) {
-    console.log("NECTARINE ==> decode.js");
+;var DECODE = (function (myModel) {
+    console.log("DECODE ==> decode.js");
     
     "use strict";
     
    /**
     * utf8ToB64
     *
-    * NECTARINE.utf8ToB64("privet") // cHJpdmV0
+    * DECODE.utf8ToB64("privet") // cHJpdmV0
     *
     * Кодирование строки в base-64
     * @param {str}  String Строка для кодирования
@@ -22,7 +22,7 @@
    /**
     * b64ToUtf8
     *
-    * NECTARINE.b64ToUtf8("cHJpdmV0") // privet
+    * DECODE.b64ToUtf8("cHJpdmV0") // privet
     *
     * Декодирование строки в utf8
     * @param {str}  String Строка для Декодирования
@@ -36,4 +36,4 @@
     
     return myModel;
     
-}(NECTARINE || {}));
+}(DECODE || {}));
