@@ -2,7 +2,7 @@
   "manifest_version": 2, 
   "name": "Nectarine", 
   "version": "0.1",
-  "description": "Nectarine",
+  "description": "Nectarine - does not save history by the given word",
   "browser_action": {
     "default_title": "Nectarine",
     "default_popup": "popup.html"
