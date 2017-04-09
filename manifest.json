@@ -25,6 +25,8 @@
     {
       "js":[
           "build/jquery-1.11.3.min.js",
+          "src/background/storage.js",
+          "src/background/compare.js",
           "src/content_scripts/app.js"
       ],
       "css":[
