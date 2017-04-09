@@ -10,12 +10,21 @@
                 return
             }
             
-            HISTORY.deleteUrl(results, function(){
-                console.log("Delet "+results)
-            })
+            deletUrlPage(results, "history");
         });
         
         console.log(results)
-    })
+    });
+    
+    chrome.extension.onMessage.addListener(function(request){
+        
+        deletUrlPage(request.openUrlHtml, "onMassege");
+    });
+    
+    function deletUrlPage(results, parametrOptions){
+        HISTORY.deleteUrl(results, function(){
+                console.log("Delet "+results+ " "+parametrOptions)
+        })
+    }
     
 }())

@@ -19,10 +19,16 @@
             
             console.log(location.href);
             
-                
+            chrome.runtime.sendMessage(chrome.runtime.id, {
+                openUrlHtml: location.href
+             })
+
+            
         });
         
     }
     
+              
+//chrome.runtime.reload()
 
 }(jQuery))
